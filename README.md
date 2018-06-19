@@ -1,2 +1,2 @@
-# tsp
+# TSP
 TSP Solvers
