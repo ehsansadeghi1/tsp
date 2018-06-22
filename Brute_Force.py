@@ -37,4 +37,3 @@ for (u, v, w) in g.edges(data=True):
 print(all_permutations(g))
 
 nx.draw(g, with_labels=True)
-print(all_permutations(g))
