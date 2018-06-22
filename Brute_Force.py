@@ -31,20 +31,10 @@ def all_permutations(g):
         w += [cycle_length(g, cycle)]
     return min(w)
 
-g = nx.Graph()
+g = nx.complete_graph(9) # creates complete graph with 9 nodes
+for (u, v, w) in g.edges(data=True):
+    w['weight'] = random.randint(0, 10)
+print(all_permutations(g))
 
-
-g.add_edge(0, 1, weight=6)
-g.add_edge(1, 2, weight=2)
-g.add_edge(2, 3, weight=3)
-g.add_edge(3, 0, weight=2)
-g.add_edge(0, 2, weight=5)
-g.add_edge(1, 3, weight=1)
-g.add_edge(0, 4, weight=3)
-g.add_edge(1, 4, weight=1)
-g.add_edge(2, 4, weight=1)
-g.add_edge(3, 4, weight=2)
-#nx.draw(g,with_labels=True)
-#plt.show()
-
+nx.draw(g, with_labels=True)
 print(all_permutations(g))
